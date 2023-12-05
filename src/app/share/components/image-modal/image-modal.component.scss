@@ -1,0 +1,60 @@
+    .modal-button {
+        border-radius: 5px;
+        border: none;
+        padding: 3px 6px;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    
+      .modal {
+        display: none;
+        position: fixed;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        z-index: 1;
+        left: 10%;
+        right: 10%;
+        height: 80%;
+        width: 80%;
+        bottom: 10%;
+      }
+    
+      /* Styling for the close button */
+      .close {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+      }
+    
+      /* Style for the modal content */
+      .modal-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between ;
+        overflow-y:scroll;
+        .div-image {
+            width: 28%;
+            margin: 1%;
+            img {
+                width: 100%;
+            }
+        }
+        /* Add your custom styles here */
+      }
+    
+      /* Show the overlay and modal when the modal is active */
+      .modal.active {
+        display: flex;
+      }

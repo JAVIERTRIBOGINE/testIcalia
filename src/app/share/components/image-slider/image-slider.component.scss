@@ -1,0 +1,26 @@
+.image-screen {
+    position: relative;
+    .slide {
+        font-size: 20px;
+        font-weight: 800;
+        border: none;
+        background: #e8e9e98a;
+        position: absolute;
+        height: 240px;
+        z-index: 999999;
+        color: grey;
+        cursor: pointer;
+        &:hover{
+            background: #e8e9e9d8;
+            color: black;
+            transition: background-color 0.3s;
+        }
+        &.previous {
+            left: 0
+        }
+        &.next {
+            right: 0
+        }
+    }
+
+}

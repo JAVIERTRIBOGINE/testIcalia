@@ -1,0 +1,38 @@
+<div class="images-container flex flex-row-wrap">
+    <div class="main-image-container">
+        <img alt="property image" src="{{(property$|async)?.imagenes[0].Uri}}">
+        <app-image-modal [images]="(property$|async)?.imagenes.slice(6)"></app-image-modal>
+    </div>
+    <div class="secondary-image-container flex flex-row-wrap" >
+        <div class="image-item" *ngFor="let image of (property$|async)?.imagenes.slice(1,5)">
+            <img alt="property image" src="{{image.Uri}}">
+        </div>
+    </div>
+</div>
+<div class="description-container">
+    <div class="reference">
+       <strong>Ref:</strong> {{ (property$|async)?.id}}
+    </div>
+    <div class="price">
+        {{ (property$|async)?.operacion?.Precio}} €
+    </div>
+    <div class="tax-info">
+      Gastos e impuestos no incluídos
+    </div>
+    <div class="title">
+        {{ (property$|async)?.Metadescription}}
+    </div>
+    <div class="city">
+       <fa-icon [icon]="faLocationDot"></fa-icon> {{ (property$| async)?.Ciudad }}, {{ (property$ | async )?.Capital}}
+    </div>
+    <div class="description">
+        <div class="description-title">Descripcion</div>
+        <div class="explanation">
+            {{ (property$ | async)?.Description }}
+        </div>
+    </div>
+</div>
+
+<div>
+    <button (click)="back()">Atrás</button>
+</div>

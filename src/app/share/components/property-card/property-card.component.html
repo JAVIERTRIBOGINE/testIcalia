@@ -1,0 +1,4 @@
+    <div (click)="navigateToDetailProperty()" (keyup.enter)="navigateToDetailProperty()" tabindex="0" class="image-container flex-row-wrap" >
+        <app-image-slider [propertyData]="property.imagenes" [imagesLength]="imagesLength"></app-image-slider>
+        <app-info-card [propertyDescription]="descriptionPropertyData"></app-info-card>
+    </div>

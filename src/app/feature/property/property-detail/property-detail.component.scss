@@ -1,0 +1,62 @@
+:host {
+
+    .images-container {
+        .main-image-container {
+            position: relative;
+            margin: 0 10px 10px 0;
+            width: 40%;
+            width: 500px;
+            app-image-modal ::ng-deep {
+                .modal-container {
+                    position: absolute;
+                    top: 2%;
+                    left: 2%
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+
+        .secondary-image-container {
+            width: 40%;
+            width: 450px;
+            flex-wrap: wrap;
+                .image-item {
+                        width: 44%;
+                        margin-right: 10px;
+                        img {
+                            width: 100%;
+                    }
+                }
+        }
+    }
+
+    .reference {
+        font-size: 10px;
+    }
+    .price {
+        font-size: 31px;
+        font-weight: bold;
+        margin-bottom: -8px;
+    }
+    .tax-info {
+        font-size: 8px;
+    }
+    .title {
+        font-weight: 600;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+    .description-title {
+        font-weight: 600;
+        font-size: 22px;
+        margin: 10px 0;
+    }
+    .explanation {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+
+}

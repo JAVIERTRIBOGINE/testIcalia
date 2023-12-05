@@ -1,0 +1,15 @@
+<div class="modal-container">
+    <button class="modal-button" (click)="openModal()" (keyup.enter)="openModal()" tabindex="0">{{images?.length}} pictures</button>
+    
+    <div class="overlay" (click)="closeModal()" (keyup.enter)="closeModal()" tabindex="1" #overlay></div>
+    
+    <div class="modal" id="myModal" #modal> 
+      <span class="close" (click)="closeModal()" tabindex="2" (keyup.enter)="closeModal()">&times;</span>
+      <div class="modal-content">
+            <div class="div-image" *ngFor="let image of images">
+                <img alt="property image" src="{{image.Uri}}">
+            </div>
+      </div>
+    </div>
+</div>
+

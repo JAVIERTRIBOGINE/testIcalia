@@ -1,0 +1,8 @@
+<h1>PROPIEDADES</h1>
+<div class="properties-grid flex flex-row-wrap flex-center">
+    <app-property-card (emitDetailPropertyUrl)="onEmitDetailPropertyUrl($event)" [imagesLength]="imagesLength" [property]="property" *ngFor="let property of (allProperties$ | async ) ?.data">
+    </app-property-card >
+</div>
+<div>
+    <app-pagination-links [currentPage]="currentPage" [links]="(allProperties$ | async)?.links" (emitPageUrl)="onEmitPageUrl($event)" ></app-pagination-links>
+</div>

@@ -1,0 +1,11 @@
+button {
+    background-color: $color-background-button;
+    color: $color-button;
+    border-radius: 99px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    &.slide {
+        border-radius: 0;
+    }
+}

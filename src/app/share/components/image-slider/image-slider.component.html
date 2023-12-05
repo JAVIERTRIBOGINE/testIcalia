@@ -1,0 +1,7 @@
+<div class="image-slider flex flex-row" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+    <div class="image-screen" *ngFor="let image of propertyData">
+        <button class="slide previous" (click)="slide(-1, $event)" tabindex="0" (keyup.enter)="slide(-1, $event)" > < </button>
+        <img alt="property image" src="{{image.Uri}}">
+        <button class="slide next" (click)="slide(1, $event)" tabindex="1" (keyup.enter)="slide(1, $event)"> > </button>
+    </div>
+</div>

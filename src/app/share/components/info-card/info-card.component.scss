@@ -1,0 +1,30 @@
+:host {
+    .property-description {
+        font-size: 11px;
+    }
+
+    .numeric-data {
+        color: grey;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .price-info {
+        .current {}
+
+        .previous {
+            color: red;
+            text-decoration: line-through;
+        }
+
+        .difference {
+            color: red
+        }
+    }
+
+    fa-icon {
+        font-size: 10px;
+        color: red;
+        margin-left: 10px;
+    }
+}

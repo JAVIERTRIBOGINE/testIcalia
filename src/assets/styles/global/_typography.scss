@@ -1,0 +1,20 @@
+
+$base-font-family: Google-Roboto--regular, Arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.5em;
+  line-height: 1.3;
+}

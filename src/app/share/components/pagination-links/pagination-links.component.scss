@@ -1,0 +1,21 @@
+:host {
+    .pagination-container {
+        margin-top: 20px;
+        .page-button {
+            border: 1px solid grey;
+            margin: 4px;
+            padding: 4px;
+            cursor: pointer;
+            &:hover {
+                background-color: lightgray;
+            }
+            span {
+                &.disabled {
+                    background-color:gray;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}
