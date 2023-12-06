@@ -25,6 +25,7 @@
     <div class="city">
        <fa-icon [icon]="faLocationDot"></fa-icon> {{ (property$| async)?.Ciudad }}, {{ (property$ | async )?.Capital}}
     </div>
+    <div class="flat-data flex flex-start"> <div class="house"><fa-icon [icon]="faHouse"></fa-icon>  {{(property$| async)?.SuperficieTotal}} m2  </div>|<div class="beds"><fa-icon [icon]="faBed"></fa-icon> {{ (property$| async)?.vivienda.Bedrooms }}</div>  | <div class="baths"><fa-icon [icon]="faBath"></fa-icon> {{(property$| async)?.vivienda.Bathrooms}} </div>   </div>
     <div class="description">
         <div class="description-title">Descripcion</div>
         <div class="explanation">
