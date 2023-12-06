@@ -1,5 +1,5 @@
 <div class="pagination-container flex flex-row-nowrap flex-center">
     <div class="page-button" *ngFor="let link of links">
-        <span class="{{!isValid?'disabled':''}}" [innerHTML]="link.label" (click)="pageUrl(link)" (keyup.enter)="pageUrl(link)" tabindex="0"></span>
+        <span class="{{!isValid()?'disabled':''}}" [innerHTML]="link.label" (click)="pageUrl(link)" (keyup.enter)="pageUrl(link)" tabindex="0"></span>
     </div>
 </div>

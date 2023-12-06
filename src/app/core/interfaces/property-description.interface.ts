@@ -4,12 +4,26 @@ export interface ImageDataProperty {
   Orden?: string;
   Uri: string;
 }
-export interface PropertyDescription {
+export interface Property {
   description: string;
   price: number;
   previousPrice: number;
   surface: number;
   bedrooms: number;
   bathrooms: number;
-  imagenes?: ImageDataProperty;
+  imagenes: ImageDataProperty[];
+}
+
+export interface HttpProperty {
+  Description: string;
+  Precio: number;
+  PrecioAnterior: number;
+  SuperficieTotal: number;
+  Bedrooms: number;
+  Bathrooms: number;
+  imagenes: ImageDataProperty[];
+  ciudadUrl: string;
+  provinciaUrl: string;
+  (index: string): string;
+  id: string;
 }

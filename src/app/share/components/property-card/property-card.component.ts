@@ -9,7 +9,11 @@ import { CommonModule } from '@angular/common';
 import { ImageSliderComponent } from '../image-slider/image-slider.component';
 import { DetailUrlParamters } from 'src/app/core/interfaces/detail-url-paramters.interface';
 import { InfoCardComponent } from '../info-card/info-card.component';
-import { PropertyDescription } from 'src/app/core/interfaces/property-description.interface';
+import {
+  HttpProperty,
+  Property,
+} from 'src/app/core/interfaces/property-description.interface';
+import { PropertyMapper } from 'src/app/core/mappers/property.mapper';
 
 @Component({
   selector: 'app-property-card',
@@ -19,18 +23,8 @@ import { PropertyDescription } from 'src/app/core/interfaces/property-descriptio
   styleUrls: ['./property-card.component.scss'],
 })
 export class PropertyCardComponent implements OnChanges {
-  descriptionPropertyData!: PropertyDescription;
-  ngOnChanges(): void {
-    this.descriptionPropertyData = {
-      description: this.property?.Description,
-      price: this.property?.Precio,
-      previousPrice: this.property?.PrecioAnterior,
-      surface: this.property?.SuperficieTotal,
-      bedrooms: this.property?.Bedrooms,
-      bathrooms: this.property?.Bathrooms,
-    };
-  }
-  @Input() property!: any;
+  descriptionPropertyData!: Property;
+  @Input() property!: HttpProperty;
 
   @Input() imagesLength!: any;
   @Output() emitDetailPropertyUrl: EventEmitter<DetailUrlParamters> =
@@ -43,5 +37,16 @@ export class PropertyCardComponent implements OnChanges {
       reference: this.property.id,
     };
     this.emitDetailPropertyUrl.emit(urlDetailParameters);
+  }
+
+  ngOnChanges(): void {
+    this.descriptionPropertyData = new PropertyMapper(
+       this.property?.Description,
+       this.property?.Precio,
+       this.property?.PrecioAnterior,
+       this.property?.SuperficieTotal,
+       this.property?.Bedrooms,
+       this.property?.Bathrooms,
+       this.property?.imagenes)
   }
 }
