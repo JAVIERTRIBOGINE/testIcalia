@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, finalize, tap } from 'rxjs';
 import { ApiService } from 'src/app/core/api.service';
-import { PropertyDescription } from 'src/app/core/interfaces/property-description.interface';
+import { Property } from 'src/app/core/interfaces/property-description.interface';
 import { propertydetailsUrlParameters } from 'src/app/core/interfaces/url-parameters.interface';
 import { LoaderService } from 'src/app/core/services/loader.service';
 import { environment } from 'src/environments/environment';
@@ -20,16 +20,14 @@ export class PropertyService {
       .pipe(finalize(() => this.loaderService.loading.next(false)));
   }
 
-  getProperty(
-    data: propertydetailsUrlParameters,
-  ): Observable<PropertyDescription[]> {
+  getProperty(data: propertydetailsUrlParameters): Observable<Property[]> {
     this.loaderService.loading.next(true);
     const segment: string = environment.entities.properties.detail.url
       .replace(':city', data.city)
       .replace(':province', data.province)
       .replace(':reference', data.reference);
     return this.apiService
-      .getEntityData<PropertyDescription>(`${environment.baseUrl}/${segment}`)
+      .getEntityData<Property>(`${environment.baseUrl}/${segment}`)
       .pipe(tap(() => this.loaderService.loading.next(false)));
   }
 }

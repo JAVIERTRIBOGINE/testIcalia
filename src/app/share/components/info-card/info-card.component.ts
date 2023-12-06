@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ImageSliderComponent } from '../image-slider/image-slider.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import { PropertyDescription } from 'src/app/core/interfaces/property-description.interface';
+import { Property } from 'src/app/core/interfaces/property-description.interface';
 
 @Component({
   selector: 'app-info-card',
@@ -14,28 +14,26 @@ import { PropertyDescription } from 'src/app/core/interfaces/property-descriptio
 })
 export class InfoCardComponent implements OnChanges {
   faArrowDown = faArrowDown;
-  @Input() propertyDescription!: PropertyDescription;
+  @Input() Property!: Property;
   difference!: number;
   diff = false;
   description!: string;
 
   ngOnChanges(): void {
     this.description =
-      this.propertyDescription?.description.length > 200
-        ? this.propertyDescription.description.slice(0, 300) + '...'
-        : this.propertyDescription.description;
+      this.Property?.description.length > 200
+        ? this.Property.description.slice(0, 300) + '...'
+        : this.Property.description;
     this.difference = Math.abs(
       Math.round(
-        ((Number(this.propertyDescription?.price) -
-          Number(this.propertyDescription?.previousPrice)) /
-          Number(this.propertyDescription?.price)) *
+        ((Number(this.Property?.price) - Number(this.Property?.previousPrice)) /
+          Number(this.Property?.price)) *
           100,
       ),
     );
 
     this.diff =
-      Number(this.propertyDescription?.price) ===
-        Number(this.propertyDescription?.previousPrice) ||
+      Number(this.Property?.price) === Number(this.Property?.previousPrice) ||
       this.difference === 0;
   }
 }

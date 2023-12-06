@@ -17,12 +17,10 @@ export class PaginationLinksComponent {
   @Output() emitPageUrl: EventEmitter<string> = new EventEmitter<string>();
 
   pageUrl(link: Link): void {
-    const isValid: boolean = this.isValid(link);
-    if (isValid) this.emitPageUrl.next(link.url);
+    this.emitPageUrl.next(link.url);
   }
 
-  public isValid(link: Link) {
-    const firstPage = this.currentPage === 1;
-    return link.label !== '...' && !firstPage;
+  public isValid() {
+    return this.currentPage === 1;
   }
 }

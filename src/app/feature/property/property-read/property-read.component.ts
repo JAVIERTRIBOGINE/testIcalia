@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetailUrlParamters } from 'src/app/core/interfaces/detail-url-paramters.interface';
 import { LoaderService } from 'src/app/core/services/loader.service';
-import { PropertyDescription } from 'src/app/core/interfaces/property-description.interface';
+import { Property } from 'src/app/core/interfaces/property-description.interface';
 
 @Component({
   selector: 'app-property-read',
@@ -33,7 +33,7 @@ export class PropertyReadComponent implements OnInit {
     });
   }
 
-  private setProperties(): Observable<PropertyDescription[]> {
+  private setProperties(): Observable<Property[]> {
     return this.propertyService.getProperties(this.readEndPoint).pipe(
       tap((data: any) => {
         this.imagesLength = data['data'].length;

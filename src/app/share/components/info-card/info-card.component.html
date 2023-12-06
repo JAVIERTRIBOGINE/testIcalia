@@ -1,3 +1,3 @@
-<div class="price-info"> <span class="curremt"> {{propertyDescription?.price}} € </span><span *ngIf="difference" class="previous"> {{ propertyDescription?.previousPrice }} € </span> <span class="difference"> <strong *ngIf="difference"><fa-icon [icon]="faArrowDown"> </fa-icon>   {{difference}} %</strong></span></div>
+<div class="price-info"> <span class="curremt"> {{Property.price}} € </span><span *ngIf="difference" class="previous"> {{ Property.previousPrice }} € </span> <span class="difference"> <strong *ngIf="difference"><fa-icon [icon]="faArrowDown"> </fa-icon>   {{difference}} %</strong></span></div>
 <div class="property-description">{{ description  }}</div>
-<div class="numeric-data"> {{propertyDescription?.surface}} m2  |  {{ propertyDescription?.bedrooms }} habitaciones  |  {{propertyDescription?.bathrooms}} baños </div>
+<div class="numeric-data"> {{Property.surface}} m2  |  {{ Property.bedrooms }} habitaciones  |  {{Property.bathrooms}} baños </div>
