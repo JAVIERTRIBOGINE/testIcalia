@@ -1,4 +1,16 @@
 :host {
+    .flat-data {
+        margin-top: 10px;
+        .house {
+            margin-right: 11px;
+        }
+        .beds {
+            margin: auto 11px;
+        }
+        .baths {
+            margin-left: 11px;
+        }
+    }
 
     .images-container {
         .main-image-container {

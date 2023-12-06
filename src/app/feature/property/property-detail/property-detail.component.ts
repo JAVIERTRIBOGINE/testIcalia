@@ -4,7 +4,7 @@ import { PropertyService } from '../property.service';
 import { ActivatedRoute } from '@angular/router';
 import { propertydetailsUrlParameters } from 'src/app/core/interfaces/url-parameters.interface';
 import { Location } from '@angular/common';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faBath, faBed, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-property-detail',
@@ -14,6 +14,9 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 export class PropertyDetailComponent {
   property$!: Observable<any>;
   faLocationDot = faLocationDot;
+  faBath = faBath;
+  faBed = faBed;
+  faHouse = faHouse;
   constructor(
     private propertyService: PropertyService,
     private route: ActivatedRoute,
